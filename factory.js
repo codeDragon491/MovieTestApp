@@ -1,9 +1,9 @@
 angular.module('MovieApp')
-    .factory('MovieFactory', ['$http',  function ($http) {
+    .factory('MovieFactory', ['$http', function($http) {
 
         return {
 
-            get: function () {
+            get: function() {
                 return $http.get("/database/movies.json");
             }
 

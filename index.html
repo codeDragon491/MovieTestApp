@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html ng-app="MovieApp">
-  <head>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-   <script src="controller.js"></script>
-   <script src="factory.js"></script>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="controller.js"></script>
+    <script src="factory.js"></script>
     <meta charset="UTF-8">
     <title>Movie Showcase</title>
-  </head>
+</head>
 
-  <body ng-controller="MovieController">
-
-  </body>
+<body ng-controller="MovieController">
+    <ul ng-repeat="movie in movies">
+        <li>
+            <h1 class="title">{{movie.title}}</h1>
+            <img ng-src="{{movie.posterurl}}" class="poster">
+            <p>{{movie.duration}}</p>
+            <p>{{movie.imdbRating}}</p>
+        </li>
+    </ul>
+</body>
 
 </html>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    ul li {
+        list-style-type: none;
+    }
+    
+    .title {
+        font-family: Curse Casual JVE;
+    }
+    
+    .poster {
+        max-width: 10rem;
+    }
+</style>
